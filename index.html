@@ -6,228 +6,255 @@
     <title>Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-    <style>
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-            font-family:'Poppins',sans-serif;
-        }
+<style>
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family:'Poppins', sans-serif;
+    }
 
-        body{
-            background:#f7f7f7;
-            color:#333;
-        }
+    body{
+        background:#f7f7f7;
+        color:#333;
+    }
 
-       
-        header{
-            padding:20px 40px;
-            background:white;
-            box-shadow:0 2px 10px rgba(0,0,0,0.1);
-            top: 0;
-            z-index: 10;
-        }
+    header{
+        padding:20px 20px;
+        background:white;
+        box-shadow:0 2px 8px rgba(0,0,0,0.1);
+        position: sticky;
+        top:0;
+        z-index:1000;
+    }
 
-        header h1{
-            text-align:center;
-            font-size:26px;
-            font-weight:600;
-        }
+    header h1{
+        text-align:center;
+        font-size:26px;
+        font-weight:600;
+    }
 
-        nav{
-            display:flex;
-            justify-content:center;
-            gap:30px;
-            position: sticky;
-            top: 0;
-            background-color: white;
-            z-index: 1000;
-        }
+    nav{
+        margin-top:10px;
+        display:flex;
+        justify-content:center;
+        flex-wrap:wrap;
+        gap:18px;
+        background:white;
+        padding:10px 0;
+    }
 
-        .navlinks{
-            text-decoration:none;
-            padding:8px 18px;
-            border-radius:20px;
-            font-weight:500;
-            color:#333;
-            transition:0.3s;
-        }
-        
-        .navlinks:hover{
-            background:black;
-            color:white;
-        }
+    .navlinks{
+        text-decoration:none;
+        padding:8px 16px;
+        border-radius:20px;
+        font-weight:500;
+        color:#333;
+        transition:0.3s;
+    }
 
-        
-        #home{
-            text-align:center;
-            padding:80px 20px;
-            background:black;
-            color:white;
-        }
+    .navlinks:hover{
+        background:black;
+        color:white;
+    }
 
+    
+    #home{
+        text-align:center;
+        padding:80px 20px;
+        background:#000;
+        color:white;
+    }
+
+    #home h1{
+        font-size:28px;
+        margin-bottom:10px;
+        line-height:1.4;
+    }
+
+    #home a{
+        margin-top:20px;
+        display:inline-block;
+        background:#007bff;
+        padding:12px 22px;
+        color:white;
+        border-radius:25px;
+        text-decoration:none;
+        transition:0.3s;
+    }
+
+    #home a:hover{
+        background:#0056c0;
+    }
+
+   
+    #about{
+        padding:60px 20px;
+        max-width:900px;
+        margin:auto;
+        text-align:center;
+    }
+
+    #about h2{
+        font-size:28px;
+        margin-bottom:15px;
+        border-bottom:3px solid black;
+        display:inline-block;
+        padding-bottom:8px;
+    }
+
+    #about p{
+        margin-top:10px;
+        line-height:1.7;
+        font-size:16px;
+    }
+
+    #works{
+        text-align:center;
+        padding:50px 20px;
+    }
+
+    .grid{
+        max-width:1000px;
+        margin:20px auto;
+        display:grid;
+        grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+        gap:25px;
+    }
+
+    .cards{
+        background:white;
+        border-radius:12px;
+        box-shadow:0 4px 12px rgba(0,0,0,0.1);
+        overflow:hidden;
+        transition:0.3s;
+    }
+
+    .cards:hover{
+        transform:scale(1.03);
+    }
+
+    .cards img{
+        width:100%;
+        height:180px;
+        object-fit:cover;
+    }
+
+    .cards a{
+        display:inline-block;
+        padding:15px;
+        font-weight:500;
+        color:black;
+        text-decoration:none;
+    }
+
+    
+    #skills{
+        padding:50px 20px;
+        text-align:center;
+    }
+
+    #skills h2{
+        font-size:28px;
+        margin-bottom:15px;
+    }
+
+    .sk{
+        max-width:600px;
+        margin:auto;
+        background:black;
+        color:white;
+        padding:20px;
+        border-radius:12px;
+        line-height:1.8;
+    }
+
+    /* Contact */
+    #contact{
+        padding:60px 20px;
+    }
+
+    #contact h2{
+        text-align:center;
+        font-size:28px;
+        margin-bottom:20px;
+    }
+
+    .form{
+        max-width:450px;
+        margin:auto;
+        background:white;
+        padding:30px;
+        border-radius:15px;
+        box-shadow:0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    input, textarea{
+        width:100%;
+        padding:12px;
+        margin-bottom:15px;
+        border-radius:8px;
+        border:1px solid #ccc;
+        font-size:15px;
+    }
+
+    button{
+        width:100%;
+        padding:12px;
+        background:#28a745;
+        color:white;
+        border:none;
+        border-radius:25px;
+        font-size:16px;
+        transition:0.3s;
+    }
+
+    button:hover{
+        background:#1f7e35;
+    }
+
+    
+    @media (max-width:768px){
         #home h1{
-            font-size:28px;
-            margin-bottom:10px;
-            animation: fadeIn 2s ease-in-out;
+            font-size:23px;
         }
-
-        @keyframes fadeIn{
-            from{opacity:0;transform:translateY(20px);}
-            to{opacity:1;transform:translateY(0);}
+        header h1{
+            font-size:22px;
         }
-
-        #home a{
-            margin-top:20px;
-            display:inline-block;
-            background:#007bff;
-            padding:12px 22px;
-            color:white;
-            border-radius:25px;
-            text-decoration:none;
-            transition:0.3s;
-        }
-
-        #home a:hover{
-            background:#0056c0;
-        }
-
-        
-        #about{
-            padding:60px 20px;
-            max-width:900px;
-            margin:auto;
-            text-align:center;
-        }
-
-        #about h2{
-            font-size:28px;
-            margin-bottom:20px;
-            border-bottom:3px solid black;
-            display:inline-block;
-            padding-bottom:10px;
-        }
-
-        #about p{
-            margin-top:10px;
-            line-height:1.8;
-            font-size:15px;
-        }
-
-       
-        #works{
-            text-align:center;
-            padding:50px 20px;
-        }
-
         .grid{
-            max-width:1000px;
-            margin:20px auto;
-            display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-            gap:25px;
+            grid-template-columns:1fr;
         }
-
-        .cards{
-            background:white;
-            border-radius:12px;
-            box-shadow:0 4px 12px rgba(0,0,0,0.1);
-            overflow:hidden;
-            transition:0.3s;
-        }
-
-        .cards:hover{
-            transform:scale(1.03);
-        }
-
         .cards img{
-            width:100%;
-            height:170px;
-            object-fit: cover;
+            height:160px;
         }
+    }
 
-        .cards center a{
-            display:inline-block;
-            padding:15px;
-            font-weight:500;
-            color:black;
+    @media (max-width:500px){
+        nav{
+            gap:10px;
         }
-
-        
-        #skills{
-            padding:50px 20px;
-            text-align:center;
+        .navlinks{
+            font-size:14px;
+            padding:6px 12px;
         }
-
-        #skills h2{
-            font-size:28px;
-            margin-bottom:20px;
+        #home{
+            padding:60px 15px;
         }
-
-        .sk{
-            max-width:600px;
-            margin:auto;
-            background:black;
-            color:white;
-            padding:20px;
-            border-radius:12px;
-            line-height:1.8;
+        #home h1{
+            font-size:20px;
         }
-
-        #contact{
-            padding:60px 20px;
-        }
-
-        #contact h2{
-            text-align:center;
-            font-size:28px;
-            margin-bottom:20px;
-        }
-
         .form{
-            max-width:450px;
-            margin:auto;
-            background:white;
-            padding:30px;
-            border-radius:15px;
-            box-shadow:0 4px 12px rgba(0,0,0,0.1);
+            padding:20px;
         }
+    }
 
-        input, textarea{
-            width:100%;
-            padding:12px;
-            margin-bottom:15px;
-            border-radius:8px;
-            border:1px solid #ccc;
-        }
-
-        button{
-            width:100%;
-            padding:12px;
-            background:#28a745;
-            color:white;
-            border:none;
-            border-radius:25px;
-            cursor:pointer;
-            font-size:16px;
-            transition:0.3s;
-        }
-
-        button:hover{
-            background:#1f7e35;
-        }
-
-        @media(max-width:600px){
-            header h1{ font-size:20px; }
-            #home h1{ font-size:22px; }
-        }
-    </style>
+</style>
 </head>
+
 <body>
 
 <header>
     <h1>Welcome to my Portfolio Page</h1>
-</header>  
     <nav>
         <a href="#home" class="navlinks">Home</a>
         <a href="#about" class="navlinks">About</a>
@@ -235,6 +262,7 @@
         <a href="#skills" class="navlinks">Skills</a>
         <a href="#contact" class="navlinks">Contact</a>
     </nav>
+</header>
 
 <div id="home">
     <h1>Hi, I'm Amina Fathima - a passionate web developer</h1>
@@ -243,13 +271,11 @@
     <a href="resume.pdf.docx" download>Download my CV</a>
 </div>
 
-
 <div id="about">
     <h2>Who am I?</h2>
     <p>I'm a front-end developer with a passion for building clean, responsive and user-friendly websites.</p>
     <p>Recently I've started exploring back-end development with Node.js and Express to expand my skill set.</p>
 </div>
-
 
 <div id="works">
     <h2>My Works</h2>
@@ -257,17 +283,17 @@
 
 <div class="grid">
     <div class="cards">
-        <img src="portfolio images/portfolio.jpg" alt="">
+        <img src="portfolio images/portfolio.jpg">
         <center><a href="#">Built a portfolio page</a></center>
     </div>
 
     <div class="cards">
-        <img src= "portfolio images/frontend.webp" alt="">
+        <img src="portfolio images/frontend.webp">
         <center><a href="#">Responsive front-end using HTML</a></center>
     </div>
 
     <div class="cards">
-        <img src="portfolio images/node.webp" alt="">
+        <img src="portfolio images/node.webp">
         <center><a href="#">Built a website using Node.js</a></center>
     </div>
 </div>
@@ -294,6 +320,9 @@
         </form>
     </div>
 </div>
+<footer style="background:#000; color:white; text-align:center; padding:20px; margin-top:40px;">
+    © 2025 Amina Fathima • All Rights Reserved
+</footer>
 
 <script>
 function displayalert(){
